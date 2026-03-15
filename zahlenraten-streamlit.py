@@ -11,7 +11,7 @@ st.write('Deine Aufgabe besteht darin, die Zahl zu erraten.\nEs geht los:')
 
 #Anzahl Rateversuche
 maxVersuche=int(7)
-st.write("Du hast maximal",maxVersuche,"Rateversuche!")
+st.write("Du hast maximal",str(maxVersuche),"Rateversuche!")
 
 #Zufallszahl
 # Geheime Zahl nur einmal pro Session erzeugen und dann in Ruhe lassen
@@ -39,17 +39,17 @@ with st.form(key='mein_formular'):
 	if submit_button:
 		if st.session_state.anzahlversuche==maxVersuche-1 and st.session_state.zahlgeheim != rateversuch:
 			st.error("Das war der siebte und letzte Rateversuch!")
-			st.write("Die gesuchte Zahl lautet:",st.session_state.zahlgeheim)
+			st.write("Die gesuchte Zahl lautet:",str(st.session_state.zahlgeheim))
 			
 		elif st.session_state.zahlgeheim == rateversuch:
 			st.success("Juchuuuu: Du hast die Zahl erraten!")
 			st.session_state.anzahlversuche=st.session_state.anzahlversuche+1
-			st.write("Du hast es im",st.session_state.anzahlversuche,". Rateversuch geschafft, die Geheimzahl zu erraten! :sunglasses:")
+			st.write("Du hast es im",str(st.session_state.anzahlversuche),". Rateversuch geschafft, die Geheimzahl zu erraten! :sunglasses:")
 		elif st.session_state.zahlgeheim < rateversuch:
 			st.warning("Diese Zahl ist zu groß!")
 			st.session_state.anzahlversuche=st.session_state.anzahlversuche+1
-			st.write("Das war der",st.session_state.anzahlversuche,". Rateversuch!")
+			st.write("Das war der",str(st.session_state.anzahlversuche),". Rateversuch!")
 		elif st.session_state.zahlgeheim > rateversuch:
 			st.warning("Diese Zahl ist zu klein!")
 			st.session_state.anzahlversuche=st.session_state.anzahlversuche+1
-			st.write("Das war der",st.session_state.anzahlversuche,". Rateversuch!")
+			st.write("Das war der",str(st.session_state.anzahlversuche),". Rateversuch!")
