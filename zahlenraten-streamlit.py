@@ -11,7 +11,7 @@ st.write('Deine Aufgabe besteht darin, die Zahl zu erraten.\nEs geht los:')
 
 #Anzahl Rateversuche
 maxVersuche=int(7)
-st.write("Du hast maximal",maxVersuche,"Rateversuche!")
+#st.write("Du hast maximal",maxVersuche,"Rateversuche!")
 
 #Zufallszahl
 # Geheime Zahl nur einmal pro Session erzeugen und dann in Ruhe lassen
